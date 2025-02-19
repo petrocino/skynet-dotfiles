@@ -1,0 +1,20 @@
+# Set multiuser sessions
+#multiuser
+
+# Set default encrypted password
+password WOGPtgyphMyxI
+
+# Standard status bar
+hardstatus on
+hardstatus alwayslastline
+hardstatus string "%{.bW}%-w%{.rW}%n %t%{-}%+w %=%{..G} %H %{..Y} %d/%m %C%a "
+
+# SESSION VARS
+setenv TMOUT 0
+#idle 1800 lockscreen
+
+# Set scrollback buffer to 100000
+defscrollback 100000
+
+# Default session log set to ON
+deflog on

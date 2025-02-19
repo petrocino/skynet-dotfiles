@@ -1,0 +1,12 @@
+# To automatically add the fingerprint into known_hosts file
+Host *
+    User br004789
+    StrictHostKeyChecking accept-new
+
+# Use tsm01 as standard jump host into this macOS
+Host jumphost
+   HostName nastsm01.nascosystems.com
+
+# Authenticate with 1Password SSH agent (1Pass application must be unlocked on system)
+Host *
+  IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"

@@ -1,0 +1,33 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Alessandro Petrocino
+	email = Alessandro.Petrocino@kyndryl.com
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[core]
+  editor = vi
+  excludesfile = ~/.gitignore
+  autocrlf = input
+	sshCommand = /usr/bin/ssh
+[color]
+  branch = auto
+  diff = auto
+  interactive = auto
+  status = auto
+[alias]
+  c = commit
+  ca = commit -a
+  cm = commit -m
+  cam = commit -am
+  d = diff
+  dc = diff --cached
+  l = log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit
+
+# Commits count - Show total commits count on github repository
+  cc = rev-list HEAD --count
+  aliases = config --global --get-regexp alias
+[credential]
+	helper = store

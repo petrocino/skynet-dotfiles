@@ -1,0 +1,46 @@
+# Ghostty config file
+# Author: Alessandro Petrocino
+# Date: 2025-02-17
+#
+
+## Font config
+#font-family = "Hack Nerd Font"
+font-family = "SFMono Nerd Font"
+#font-family = "MesloLGL Nerd Font"
+font-size = 16
+
+
+# Theme and colors
+#theme = catppuccin-mocha
+theme = "GitLab-Dark-Grey"
+#theme = "starlight"
+#theme = "Elegant"
+
+background = 1C2021
+window-colorspace = "display-p3"
+macos-titlebar-style = transparent
+#background-opacity = 0.98
+
+
+# Default dimensions of a new window
+window-height=25
+window-width=100
+
+
+# Cursor style
+cursor-style = block
+
+
+# Mouse config
+mouse-hide-while-typing = true
+mouse-scroll-multiplier = 2
+
+
+#------------------------------------------------------
+# Keybindings
+#------------------------------------------------------
+# The command default is cmd+s (like ctrl+a on TMUX)
+# Then, the complement key to execute the keybind
+keybind = cmd+s>r=reload_config
+keybind = cmd+s>c=new_tab
+keybind = cmd+s>x=close_surface

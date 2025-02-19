@@ -1,0 +1,41 @@
+## ALIASES for NASCO
+## Aliases specific for NASCO environment.
+# For both ZSH and BASH
+
+### -----------------------------------------------------------------------------------------------------###
+### GENERAL ALIASES
+
+alias nh="cat /etc/hosts | grep -i "    // grep the server on new hosts_ng
+alias jump="ssh -J jumphost"
+alias checkhosts="ssh nastsm01 '/depotux/scripts/status_nastsm01_hosts.sh' ; $HOME/scripts/git/git_commit_report.sh ; echo ; date"
+alias copyhosts="scp nastsm01:/etc/hosts ~/Downloads/hosts_from_nastsm01.$(date '+%Y-%m-%d-%H-%M')"
+alias getframeserials="jump nasp9hmca 'lssyscfg -r sys -F name,state,serial_num | grep Server | sort'"
+alias sysadmin="$HOME/scripts/NASCO/create_linux_user/sysadmin_ng.sh"
+### -----------------------------------------------------------------------------------------------------###
+
+
+### -----------------------------------------------------------------------------------------------------###
+### 1Password-CLI and DEVTOOLS
+
+if [ -x "/opt/homebrew/bin/op" ]; then
+    # Shell completion for 1Pass
+    # eval "$(op completion zsh)"; compdef _op op
+
+    # Define the variable with the contents of the 1Pass item
+    UNIX_CRED="op://NASCO/UNIX-login/password"
+
+    # Create an alias to get above secret and copy it to the clipboard (pbcopy)
+    # Specific for macOS (pbcopy)
+    alias unixpass="op read $UNIX_CRED --no-newline | pbcopy"
+fi
+### -----------------------------------------------------------------------------------------------------###
+
+
+### -----------------------------------------------------------------------------------------------------###
+### VLAN funcion
+vlan_function() {
+    # Print specific lines and then grep for the argument
+    (sed -n '14,15p' /Users/petrocin/scripts/NASCO/nasco_vlans.md && grep -i "$1" /Users/petrocin/scripts/NASCO/nasco_vlans.md)
+}
+alias vlan="vlan_function"
+### -----------------------------------------------------------------------------------------------------###
