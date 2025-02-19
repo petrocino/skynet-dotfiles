@@ -4,6 +4,7 @@
 ###
 
 
+
 ### -----------------------------------------------------------------------------------------------------###
 ### MAIN CONFIG
 ## Used on any system
@@ -30,20 +31,6 @@ export TERM
 test -e "$DOTFILES_DIR/iterm/.iterm2_shell_integration.zsh" && source "$DOTFILES_DIR/iterm/.iterm2_shell_integration.zsh"
 ### -----------------------------------------------------------------------------------------------------###
 
-# Before Powerlevel
-#echo -e "$(cat /Users/petrocin/scripts/linux/motd_templates/cyberdyne_and_skynet_v2.txt)"
-#echo ""
-#GREEN="\033[0;32m"
-#RESET="\033[0m"
-#
-##echo -e "${GREEN}Hostname: [$(hostname)]${RESET}"
-##echo "OS:        [$(sw_vers -productName) $(sw_vers -productVersion)]"
-##echo ""
-#
-#echo -e "+--------------------------------------------+"
-#echo -e "| Hostname:  ${GREEN}[$(uname -n)]${RESET}"
-#echo -e "| OS:        [$(sw_vers -productName) $(sw_vers -productVersion)]"
-#echo -e "+--------------------------------------------+"
 
 ### -----------------------------------------------------------------------------------------------------###
 ### ZSH PowerLevel10K config
