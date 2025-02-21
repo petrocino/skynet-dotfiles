@@ -30,10 +30,10 @@ RESET="\[\e[0m\]"
 ### PROMPT SECTION
 
 # Define critical servers
-CRITICAL_SERVERS=("nastsm01" "nasvmrhibmcb02" "nasftp1" "nasftp2")  
+CRITICAL_SERVERS=("nastsm01" "nasftp1" "nasftp2")  
 
 # Get the hostname and define the variable
-HOSTNAME=$(hostname)
+HOSTNAME=$(uname -n)
 
 # Determine if the server is critical
 if [[ " ${CRITICAL_SERVERS[@]} " =~ " ${HOSTNAME} " ]]; then
@@ -58,7 +58,7 @@ export HISTSIZE=10000 # Number of commands stored in memory
 export HISTFILESIZE=50000 # Max number of commands stored in ~/.bash_history
 
 # Set custom history file location (optional)
-export HISTFILE=~/.bash_history  # Change this path if needed
+#export HISTFILE=~/.bash_history  # Change this path if needed
 
 EDITOR=vi
 
