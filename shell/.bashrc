@@ -10,10 +10,11 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # User specific environment
-if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
-then
-    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
-fi
+#if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
+#then
+#    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+#fi
+PATH=/usr/bin:/usr/sbin:/usr/bin/X11:/usr/local/bin:/u/br004789/scripts
 export PATH
 
 # Avoid disconnection on timeouts
@@ -24,6 +25,9 @@ YELLOW="\[\e[33m\]"
 DARK_RED_BG="\[\e[48;5;88m\]"  # Darker red background
 WHITE="\[\e[97m\]"  # Bright white text for better contrast
 RESET="\[\e[0m\]"
+
+#--------------------------------------------------------------------------#
+### PROMPT SECTION
 
 # Define critical servers
 CRITICAL_SERVERS=("nastsm01" "nasvmrhibmcb02" "nasftp1" "nasftp2")  
@@ -41,9 +45,11 @@ fi
 # Set the PS1 prompt
 # export PS1="\u@${HOST_COLOR}\h${RESET} \w > "
 export PS1="\n┌──(\u@${HOST_COLOR}\h${RESET})-[${BLUE}\w${RESET}]\n└─\$ "
-
 # Add a blank line after each command
-PROMPT_COMMAND='echo "";'
+#PROMPT_COMMAND='echo "";'
+#--------------------------------------------------------------------------#
+
+export EXTENDED_HISTORY=ON
 
 # Increase history size (in memory)
 export HISTSIZE=10000 # Number of commands stored in memory
@@ -53,3 +59,14 @@ export HISTFILESIZE=50000 # Max number of commands stored in ~/.bash_history
 
 # Set custom history file location (optional)
 export HISTFILE=~/.bash_history  # Change this path if needed
+
+EDITOR=vi
+
+### -----------------------------------------------------------------------------------------------------###
+### Source Global aliases
+# Include alias file (if present) containing aliases for ssh, etc.
+if [ -f ~/.aliases ]
+then
+  source ~/.aliases
+fi
+### -----------------------------------------------------------------------------------------------------###
