@@ -59,6 +59,15 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 
 ### -----------------------------------------------------------------------------------------------------###
+#FZF
+source <(fzf --zsh)
+
+#Aliases specific for fzf
+alias fzcat="fzf --preview='bat --color=always {}'"
+### -----------------------------------------------------------------------------------------------------###
+
+
+### -----------------------------------------------------------------------------------------------------###
 ### POMODORO-CLI CONFIG
 # This uses the 'timer' application, from brew repository.
 work() {
