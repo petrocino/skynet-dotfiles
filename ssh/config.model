@@ -1,59 +1,12 @@
-# Config file for SSH connections from Kyndryl's MacBook Pro  
-# Author: Alessandro Petrocino  
-# Date: 2023-03-20  
-# Last review: 2025-04-02  
+# To automatically add the fingerprint into known_hosts file
+Host *
+    User br004789
+    StrictHostKeyChecking accept-new
 
-### Homelab stuff -- Begin  
-Host stargate.infra.lan  
-  Port 2298  
-  User netfire  
+# Use tsm01 as standard jump host into this macOS
+Host jumphost
+   HostName nastsm01.nascosystems.com
 
-Host vm-code.homelab.lan raspberry.infra.lan  
-  User netfire  
-
-Host macmini-m1.home.lan  
-  User ale  
-### Homelab stuff -- End  
-
-
-### NASCO ENV - Begin  
-Host *  
-  User br004789  
-  StrictHostKeyChecking accept-new  
-  HostKeyAlgorithms ssh-ed25519  
-  CanonicalizeHostname yes  
-  CanonicalizeFallbackLocal yes  
-  IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"  
-  ControlMaster auto  
-  ControlPath ~/.ssh/control-%r@%h:%p  
-  ControlPersist 10m  
-  LogLevel VERBOSE  
-  GSSAPIAuthentication no  
-  ServerAliveInterval 60  
-  ServerAliveCountMax 3  
-  TCPKeepAlive yes  
-
-# Use nastsm01 as the standard jump host  
-Host jumphost  
-  HostName nastsm01.nascosystems.com  
-
-# Alias for NASCO hosts (direct access, no jump host needed)  
-Host cb01 
-  HostName nasvmrhibmcb01  
-
-Host cb02
-  HostName nasvmrhibmcb02 
-
-# Hosts that require nastsm01 as a jump host - CORPT 
-Host qtsansiblectl01 qtsansiblectl02 qtsansiblectl03 qtsansibledb01 qtsnascoveeamp7 qtsnascoveeamp8 qtsnascoveeamp9 qtspalbitbuc qvrpsyslog01 qvrpazbuild01 qtsscolnxdev01 
-  ProxyJump nastsm01.nascosystems.com  
-
-# DMZ QTS/CORP
-# Requires 2 jump hosts
-Host qvrpzbitbuc01 qvrdzbitbuc01 qvrpproxydmz01 qvrpproxydmz02 qtsnascofpswg qvrpzibproxy01 qvrpzibproxy02
-  ProxyJump nastsm01,qtsansiblectl01
-
-
-### NASCO ENV - End  
-
-#EOF  
+# Authenticate with 1Password SSH agent (1Pass application must be unlocked on system)
+Host *
+  IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
