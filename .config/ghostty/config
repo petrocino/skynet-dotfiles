@@ -23,7 +23,7 @@ macos-titlebar-style = transparent
 
 
 # Default dimensions of a new window
-window-height=25
+window-height=27
 window-width=100
 
 
