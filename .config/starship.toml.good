@@ -1,0 +1,130 @@
+# ~/.config/starship.toml
+# Starship config
+# Author: Alessandro Petrocino
+# Date: 2025-04-29
+# Version: 0.2
+
+# Standard prompt behavior
+add_newline = true
+command_timeout = 1000
+#format = """$os$username$hostname$kubernetes$directory$git_branch$character$git_status"""
+
+# Drop ugly default prompt characters
+#[character]
+#success_symbol = "[[❯](fg)](fg)"
+#error_symbol = "[❯](red)"
+#vimcmd_symbol = "[❮](green)"
+
+
+format = """\
+[╭─ ](bold white)$os$username$hostname$directory$git_branch$git_status$time
+[╰─❯](bold green) """
+
+[character]
+success_symbol = "[[❯](fg)](fg)"
+error_symbol = "[❯](red)"
+vimcmd_symbol = "[❮](green)"
+
+[time]
+disabled = false
+format = ' [ $time](bold yellow)'
+time_format = "%H:%M:%S"
+
+# ---
+
+[localip]
+ssh_only = false
+format = '@[$localipv4](bold red) '
+disabled = false
+
+[os]
+format = '[$symbol](bold white) '   
+disabled = false
+
+[os.symbols]
+Windows = ' '
+Arch = '󰣇'
+Ubuntu = ''
+Macos = '󰀵'
+NixOS = ''
+Raspbian = ''
+Redhat = ''
+RedHatEnterprise = ''
+
+
+# ---y
+
+# Shows the username
+[username]
+style_user = 'white bold'
+style_root = 'black bold'
+format = '[$user]($style) '
+disabled = false
+show_always = true
+
+# Shows the hostname
+[hostname]
+ssh_only = false
+format = 'on 󰒍 [$hostname](bold blue) '
+disabled = false
+
+# Shows current directory
+[directory]
+truncation_length = 3
+truncation_symbol = '…/'
+home_symbol = '󰋜 ~'
+read_only_style = '197'
+read_only = '  '
+format = 'at [\[$path\]]($style)[$read_only]($read_only_style) '
+
+# Shows current git branch
+[git_branch]
+symbol = ' '
+format = 'via [$symbol$branch]($style)'
+# truncation_length = 4
+truncation_symbol = '…/'
+style = 'bold green'
+
+# Shows current git status
+[git_status]
+format = '([ \( $all_status$ahead_behind\)]($style) )'
+style = 'bold green'
+conflicted = '[ confliced=${count}](red) '
+up_to_date = '[󰘽 up-to-date](green) '
+untracked = '[󰋗 untracked=${count}](red) '
+ahead = ' ahead=${count}'
+diverged = ' ahead=${ahead_count}  behind=${behind_count}'
+behind = ' behind=${count}'
+stashed = '[ stashed=${count}](green) '
+modified = '[󰛿 modified=${count}](yellow) '
+staged = '[󰐗 staged=${count}](green) '
+renamed = '[󱍸 renamed=${count}](yellow) '
+deleted = '[󰍶 deleted=${count}](red) '
+
+# Shows kubernetes context and namespace
+[kubernetes]
+format = 'via [󱃾 $context\($namespace\)](bold purple) '
+disabled = false
+
+# ---
+
+[vagrant]
+disabled = true
+
+[docker_context]
+disabled = true
+
+[helm]
+disabled = true
+
+[python]
+disabled = true
+
+[nodejs]
+disabled = true
+
+[ruby]
+disabled = true
+
+[terraform]
+disabled = true
