@@ -1,0 +1,86 @@
+### -----------------------------------------------------------------------------------------------------###
+### GLOBAL ALIASES - LINUX###
+## Author: Alessandro Petrocino
+## Version: 1.6
+## Date: 2025-04-29
+
+
+### -----------------------------------------------------------------------------------------------------###
+### MAIN 
+
+# Become root - a classic
+alias root="sudo su -"
+
+alias ls="ls --color=auto"
+alias ll="ls -la"
+alias lart="ls -lart"
+alias ws="cat /etc/hosts | grep -i "   // grep a server on local /etc/hosts file
+alias genpass="openssl rand -base64"    // Generate a random password. Must specify the size of it as $1 var
+alias genpw="pwgen -ys 15 1"    // Another random password generation
+alias ip-sort="sort -t . -k 3,3n -k 4,4n"    // Sort IPs 
+alias ipsort="ip-sort"
+### -----------------------------------------------------------------------------------------------------###
+
+
+### -----------------------------------------------------------------------------------------------------###
+### -----------------------------------------------------------------------------------------------------###
+alias getip="curl ipecho.net/plain; echo" # Get public IP 
+alias simple_server="python3 -m http.server --directory . 8081" # Start a simple python http server on local dir
+### -----------------------------------------------------------------------------------------------------###
+
+
+### -----------------------------------------------------------------------------------------------------###
+### TRASH-CLI application VARS.
+TRASHDIR="$HOME/garbage/trash-cli"
+XDG_DATA_HOME="$TRASHDIR"
+alias trash="trash --trash-dir $TRASHDIR"
+alias trash-put="trash-put --trash-dir $TRASHDIR"
+alias trash-list="trash-list --trash-dir $TRASHDIR"
+alias trash-empty="trash-empty --trash-dir $TRASHDIR"
+alias trash-restore="trash-restore --trash-dir $TRASHDIR"
+### -----------------------------------------------------------------------------------------------------###
+
+
+### -----------------------------------------------------------------------------------------------------###
+### NVIM STUFF
+# Check if nvim is installed before creating aliases
+if command -v nvim &> /dev/null
+then
+  alias vi="nvim"
+  alias vim="nvim"
+fi
+### -----------------------------------------------------------------------------------------------------###
+
+
+### -----------------------------------------------------------------------------------------------------###
+### Function to backup files
+## Create a backup file based on ISO 8601 (Year-Month-Day-Hour:Minutes:Seconds)
+backup_files() {
+    if [ -z "$1" ]; then
+        echo "Inform the file to be backuped..."
+        echo
+        return 1
+    fi
+
+cp -p $1 $1.$(date "+%Y-%m-%d-%H:%M:%S")
+}
+alias bkp="backup_files"
+### -----------------------------------------------------------------------------------------------------###
+
+
+### -----------------------------------------------------------------------------------------------------###
+### SCREEN shortcuts for maintenances
+screen_maint() {
+    if [ -z "$1" ]; then
+        echo "Missing the target host to use screen. Try again..."
+        echo
+        return 1
+    fi
+
+    THE_USER=netfire
+    LOGDIR=$HOME/screen_logs
+    mkdir -p "$LOGDIR"
+    screen -L -Logfile $LOGDIR/$1-maintenance.log -S $1-maintenance-$THE_USER -t $1
+}
+alias maint="screen_maint"
+### -----------------------------------------------------------------------------------------------------###
