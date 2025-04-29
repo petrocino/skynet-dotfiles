@@ -1,5 +1,5 @@
 ### -----------------------------------------------------------------------------------------------------###
-### GLOBAL ALIASES - LINUX###
+### GLOBAL ALIASES - LINUX ###
 ## Author: Alessandro Petrocino
 ## Version: 1.6
 ## Date: 2025-04-29
@@ -11,13 +11,16 @@
 # Become root - a classic
 alias root="sudo su -"
 
+# Become ansible
+alias beansible="sudo su - ansible"
+
 alias ls="ls --color=auto"
 alias ll="ls -la"
 alias lart="ls -lart"
-alias ws="cat /etc/hosts | grep -i "   // grep a server on local /etc/hosts file
-alias genpass="openssl rand -base64"    // Generate a random password. Must specify the size of it as $1 var
-alias genpw="pwgen -ys 15 1"    // Another random password generation
-alias ip-sort="sort -t . -k 3,3n -k 4,4n"    // Sort IPs 
+alias ws="cat /etc/hosts | grep -i "   # grep a server on local /etc/hosts file
+alias genpass="openssl rand -base64"   # Generate a random password. Must specify the size of it as $1 var
+alias genpw="pwgen -ys 15 1"           # Another random password generation
+alias ip-sort="sort -t . -k 3,3n -k 4,4n" # Sort IPs 
 alias ipsort="ip-sort"
 ### -----------------------------------------------------------------------------------------------------###
 
