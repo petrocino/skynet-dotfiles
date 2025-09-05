@@ -9,7 +9,8 @@ alias nh="cat /etc/hosts | grep -i "    // grep the server on new hosts_ng
 alias jump="ssh -J jumphost"
 alias checkhosts="ssh nastsm01 '/depotux/scripts/status_nastsm01_hosts.sh' ; $HOME/scripts/git/git_commit_report.sh ; echo ; date"
 alias copyhosts="scp nastsm01:/etc/hosts ~/Downloads/hosts_from_nastsm01.$(date '+%Y-%m-%d-%H-%M')"
-alias getframeserials="jump nasp9hmca 'lssyscfg -r sys -F name,state,serial_num | grep Server | sort'"
+#alias getframeserials="jump nasp9hmca 'lssyscfg -r sys -F name,state,serial_num | grep Server | sort'"
+alias getframeserials="ssh -q nasp9hmca 'lssyscfg -r sys -F name,state,serial_num | grep Server | sort'"
 alias sysadmin="$HOME/scripts/NASCO/create_linux_user/sysadmin_ng.sh"
 ### -----------------------------------------------------------------------------------------------------###
 
@@ -38,4 +39,10 @@ vlan_function() {
     (sed -n '14,15p' /Users/petrocin/scripts/NASCO/nasco_vlans.md && grep -i "$1" /Users/petrocin/scripts/NASCO/nasco_vlans.md)
 }
 alias vlan="vlan_function"
+### -----------------------------------------------------------------------------------------------------###
+
+### -----------------------------------------------------------------------------------------------------###
+### IPAM Search
+alias ips="/Users/petrocin/dev/ipam_search/ipam_search.sh"
+alias ipam_search="ips"
 ### -----------------------------------------------------------------------------------------------------###
