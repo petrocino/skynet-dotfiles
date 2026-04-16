@@ -33,7 +33,7 @@ NixOS = ''
 Raspbian = ''
 Redhat = ''
 RedHatEnterprise = ''
-#RockyLinux = 'U+E891'
+RockyLinux = ''
 
 
 # ---y
@@ -105,9 +105,11 @@ disabled = true
 disabled = false
 # The format defines how the info is displayed. 
 # ${virtualenv} is the name of the active venv.
-format = 'via [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
-style = "bold yellow"
-symbol = "🐍 "
+#format = 'via [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+#style = "bold yellow"
+#symbol = "🐍 "
+format = '([(\($virtualenv\))]($style) )'
+style = "bright-blue"
 pyenv_version_name = true
 
 
@@ -118,4 +120,4 @@ disabled = true
 disabled = true
 
 [terraform]
-disabled = true
+disabled = false
