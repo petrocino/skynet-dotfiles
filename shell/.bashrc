@@ -30,7 +30,7 @@ RESET="\[\e[0m\]"
 ### PROMPT SECTION
 
 # Define critical servers
-CRITICAL_SERVERS=("nastsm01" "nasftp1" "nasftp2")  
+#CRITICAL_SERVERS=("nastsm01" "nasftp1" "nasftp2")  
 
 # Get the hostname and define the variable
 HOSTNAME=$(uname -n)
@@ -70,4 +70,11 @@ then
   source ~/.aliases
 fi
 ### -----------------------------------------------------------------------------------------------------###
+
+# Additional sets
+
+# Starship prompt (overlap the PROMPT SECTION - Comment it to stop using)
 eval "$(starship init bash)" 
+
+
+export VIRTUAL_ENV_DISABLE_PROMPT=1
