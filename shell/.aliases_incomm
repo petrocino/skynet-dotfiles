@@ -1,8 +1,8 @@
 ### -----------------------------------------------------------------------------------------------------###
 ### GLOBAL ALIASES ###
 ## Author: Alessandro Petrocino
-## Version: 1.5
-## Date: 2025-02-18
+## Version: 1.6
+## Date: 2026-04-20
 
 
 ### -----------------------------------------------------------------------------------------------------###
@@ -19,48 +19,6 @@ alias genpass="openssl rand -base64"    // Generate a random password. Must spec
 alias genpw="pwgen -ys 15 1"    // Another random password generation
 alias ip-sort="sort -t . -k 3,3n -k 4,4n"    // Sort IPs 
 alias ipsort="ip-sort"
-### -----------------------------------------------------------------------------------------------------###
-
-
-### -----------------------------------------------------------------------------------------------------###
-### -----------------------------------------------------------------------------------------------------###
-### macOS specific (comment if necessary for other Unix-based OS)
-if [[ "$(uname)" == "Darwin" ]]; then
-    myos="You are in a macOS, man..."
-    alias cafe="caffeinate -dims" # Start caffeinate on system
-    alias psc="ps -ef | grep -i caffeinate" # Check if caffeinate is up and running
-    alias getip="curl ipecho.net/plain; echo" # Get public IP 
-
-    alias simple_server="python3 -m http.server --directory . 8081" # Start a simple python http server on local dir
-fi
-### -----------------------------------------------------------------------------------------------------###
-
-## These are not working, due new security implementation from Kyndryl MDM
-#alias senhawifi="security find-generic-password -wa Skynet"
-#alias wifipass="senhawifi"
-### -----------------------------------------------------------------------------------------------------###
-
-
-### -----------------------------------------------------------------------------------------------------###
-### TRASH-CLI application VARS.
-TRASHDIR="$HOME/garbage/trash-cli"
-XDG_DATA_HOME="$TRASHDIR"
-alias trash="trash --trash-dir $TRASHDIR"
-alias trash-put="trash-put --trash-dir $TRASHDIR"
-alias trash-list="trash-list --trash-dir $TRASHDIR"
-alias trash-empty="trash-empty --trash-dir $TRASHDIR"
-alias trash-restore="trash-restore --trash-dir $TRASHDIR"
-### -----------------------------------------------------------------------------------------------------###
-
-
-### -----------------------------------------------------------------------------------------------------###
-### NVIM STUFF
-# Check if nvim is installed before creating aliases
-if command -v nvim &> /dev/null
-then
-  alias vi="nvim"
-  alias vim="nvim"
-fi
 ### -----------------------------------------------------------------------------------------------------###
 
 
