@@ -1,5 +1,5 @@
 ### -----------------------------------------------------------------------------------------------------###
-### GLOBAL ALIASES ###
+### GLOBAL ALIASES - InComm env ###
 ## Author: Alessandro Petrocino
 ## Version: 1.6
 ## Date: 2026-04-20
@@ -14,10 +14,9 @@ alias root="sudo su -"
 alias ls="ls --color=auto"
 alias ll="ls -la"
 alias lart="ls -lart"
-alias ws="cat /etc/hosts | grep -i "   // grep a server on local /etc/hosts file
-alias genpass="openssl rand -base64"    // Generate a random password. Must specify the size of it as $1 var
-alias genpw="pwgen -ys 15 1"    // Another random password generation
-alias ip-sort="sort -t . -k 3,3n -k 4,4n"    // Sort IPs 
+alias genpass="openssl rand -base64"
+alias genpw="pwgen -ys 15 1"
+alias ip-sort="sort -t . -k 3,3n -k 4,4n"
 alias ipsort="ip-sort"
 ### -----------------------------------------------------------------------------------------------------###
 
