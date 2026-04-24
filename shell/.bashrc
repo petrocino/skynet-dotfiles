@@ -1,8 +1,8 @@
 ## Personal .bashrc file
 # Used for corporative environments with bash on it.
 # Author: Alessandro Petrocino
-# v. 0.1
-# Date: 2025-02-21
+# v. 0.2
+# Date: 2026-04-24
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
@@ -14,7 +14,7 @@ fi
 #then
 #    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 #fi
-PATH=/usr/bin:/usr/sbin:/usr/bin/X11:/usr/local/bin:/u/br004789/scripts
+PATH=/usr/bin:/usr/sbin:/usr/bin/X11:/usr/local/bin
 export PATH
 
 # Avoid disconnection on timeouts
@@ -30,7 +30,7 @@ RESET="\[\e[0m\]"
 ### PROMPT SECTION
 
 # Define critical servers
-#CRITICAL_SERVERS=("nastsm01" "nasftp1" "nasftp2")  
+CRITICAL_SERVERS=("nastsm01" "nasftp1" "nasftp2")  
 
 # Get the hostname and define the variable
 HOSTNAME=$(uname -n)
@@ -78,3 +78,5 @@ eval "$(starship init bash)"
 
 
 export VIRTUAL_ENV_DISABLE_PROMPT=1
+
+#EOF
