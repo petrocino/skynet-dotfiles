@@ -2,7 +2,7 @@
 
 add_newline = true
 command_timeout = 1000
-format = """$os$username$hostname$kubernetes$directory$python$git_branch$character$git_status"""
+format = """$os$username$hostname$localip$kubernetes$directory$python$git_branch$character$git_status"""
 
 # Drop ugly default prompt characters
 [character]
@@ -13,8 +13,8 @@ vimcmd_symbol = "[❮](green)"
 # ---
 
 [localip]
-ssh_only = false
-format = '@[$localipv4](bold red) '
+ssh_only = true
+format = '(\([$localipv4](bold blue)\)) '
 disabled = false
 
 [os]
@@ -38,7 +38,7 @@ RockyLinux = ''
 # Shows the username
 [username]
 style_user = 'white bold'
-style_root = 'black bold'
+style_root = 'red bold'
 format = '[$user]($style) '
 disabled = false
 show_always = true
