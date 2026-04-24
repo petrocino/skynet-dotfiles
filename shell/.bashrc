@@ -74,8 +74,8 @@ fi
 # Additional sets
 
 # Starship prompt (overlap the PROMPT SECTION - Comment it to stop using)
+export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 eval "$(starship init bash)" 
-
 
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
