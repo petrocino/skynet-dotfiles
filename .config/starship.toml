@@ -1,7 +1,11 @@
 # ~/.config/starship.toml
-
+# Starship config file
+# Last update: 2026-04-24
+#
 add_newline = true
 command_timeout = 1000
+
+# Main format syntax
 format = """$os$username$hostname$localip$kubernetes$directory$python$git_branch$character$git_status"""
 
 # Drop ugly default prompt characters
@@ -12,15 +16,18 @@ vimcmd_symbol = "[❮](green)"
 
 # ---
 
+# Shows local IP on prompt
 [localip]
 ssh_only = true
 format = '(\([$localipv4](bold blue)\)) '
 disabled = false
 
+# Shows the local OS on prompt
 [os]
 format = '[$symbol](bold white) '   
 disabled = false
 
+# OS icons. Most common here
 [os.symbols]
 Windows = ' '
 Arch = '󰣇'
@@ -32,8 +39,6 @@ Redhat = ''
 RedHatEnterprise = ''
 RockyLinux = ''
 
-
-# ---y
 
 # Shows the username
 [username]
@@ -87,7 +92,8 @@ deleted = '[󰍶 deleted=${count}](red) '
 format = 'via [󱃾 $context\($namespace\)](bold purple) '
 disabled = false
 
-# ---
+
+#--- Other languages support
 
 [vagrant]
 disabled = true
@@ -98,13 +104,13 @@ disabled = true
 [helm]
 disabled = true
 
+# Python venv status
 [python]
 disabled = false
 symbol = "󰌠 "
 style = "bold yellow"
 #format = '([(\($virtualenv\))]($style) )'
 format = 'via [$symbol($virtualenv)]($style) '
-
 
 [nodejs]
 disabled = true
@@ -114,3 +120,5 @@ disabled = true
 
 [terraform]
 disabled = false
+
+#EOF
