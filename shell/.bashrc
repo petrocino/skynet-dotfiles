@@ -14,7 +14,7 @@ fi
 #then
 #    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 #fi
-PATH=/usr/bin:/usr/sbin:/usr/bin/X11:/usr/local/bin
+PATH=/usr/bin:/usr/sbin:/usr/bin/X11:/usr/local/bin:$HOME/scripts
 export PATH
 
 # Avoid disconnection on timeouts
