@@ -22,6 +22,14 @@ alias ipsort="ip-sort"
 
 
 ### -----------------------------------------------------------------------------------------------------###
+# Aliases to servers
+alias spacewalk="ssh apetrocino.aa@spspace02v.uss.net"
+alias unixsupport="ssh apetrocino.aa@slunxsuppt01v.uss.net"
+
+### -----------------------------------------------------------------------------------------------------###
+
+
+### -----------------------------------------------------------------------------------------------------###
 ### Function to backup files
 ## Create a backup file based on ISO 8601 (Year-Month-Day-Hour:Minutes:Seconds)
 backup_files() {
