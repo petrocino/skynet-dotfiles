@@ -1,0 +1,6 @@
+Host *
+  User apetrocino.aa
+  StrictHostKeyChecking accept-new
+  HostKeyAlgorithms ssh-ed25519
+  CanonicalizeHostname yes
+  CanonicalizeFallbackLocal yes
