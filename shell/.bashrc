@@ -77,6 +77,9 @@ fi
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 eval "$(starship init bash)" 
 
+# FZF
+eval "$(fzf --bash)"
+
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 #EOF
