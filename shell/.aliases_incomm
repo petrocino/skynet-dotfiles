@@ -18,6 +18,8 @@ alias genpass="openssl rand -base64"
 alias genpw="pwgen -ys 15 1"
 alias ip-sort="sort -t . -k 3,3n -k 4,4n"
 alias ipsort="ip-sort"
+
+alias cdo="cd '/mnt/c/Users/apetrocino/OneDrive - InComm Payments'"
 ### -----------------------------------------------------------------------------------------------------###
 
 
