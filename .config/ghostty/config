@@ -12,7 +12,7 @@ font-size = 14
 
 # Theme and colors
 #theme = catppuccin-mocha
-theme = "GitLab-Dark-Grey"
+theme = "GitLab Dark Grey"
 #theme = "starlight"
 #theme = "Elegant"
 
