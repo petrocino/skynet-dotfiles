@@ -1,6 +1,6 @@
 ### Default .ZSHRC file
 ### Owner: Alessandro Petrocino
-### Last modification: 2026-06-07
+### Last modification: 2026-06-11
 ###
 
 ### -----------------------------------------------------------------------------------------------------###
@@ -16,6 +16,28 @@ PATH=$PATH:$HOME/scripts
 
 ### DEFAULT XDG_CONFIG_HOME var
 XDG_CONFIG_HOME=$DOTFILES_DIR/.config
+
+### Shell behavior
+setopt AUTOCD
+setopt NOBEEP
+setopt NUMERIC_GLOB_SORT # sort file10 after file9, not after file1
+### -----------------------------------------------------------------------------------------------------###
+
+
+
+### -----------------------------------------------------------------------------------------------------###
+# HISTORY CONFIG
+
+HISTFILE="~/.zsh_history"
+HISTSIZE="100000"
+SAVEHIST="100000"
+
+setopt APPEND_HISTORY
+setopt SHARE_HISTORY
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_FIND_NO_DUPS
 ### -----------------------------------------------------------------------------------------------------###
 
 
