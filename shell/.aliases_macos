@@ -11,7 +11,7 @@
 # Become root - a classic
 alias root="sudo su -"
 
-alias ls="ls --color=auto"
+alias ls="ls --color"
 alias ll="ls -la"
 alias lart="ls -lart"
 alias genpass="openssl rand -base64"    // Generate a random password. Must specify the size of it as $1 var
