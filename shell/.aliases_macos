@@ -18,6 +18,7 @@ alias genpass="openssl rand -base64"    // Generate a random password. Must spec
 alias genpw="pwgen -ys 15 1"    // Another random password generation
 alias ip-sort="sort -t . -k 3,3n -k 4,4n"    // Sort IPs 
 alias ipsort="ip-sort"
+alias stargate="ssh netfire@10.0.1.4 -p 2298"
 ### -----------------------------------------------------------------------------------------------------###
 
 
