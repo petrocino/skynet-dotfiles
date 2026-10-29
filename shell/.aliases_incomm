@@ -28,6 +28,8 @@ alias cdo="cd '/mnt/c/Users/apetrocino/OneDrive - InComm Payments'"
 alias spacewalk="ssh apetrocino.aa@spspace02v.uss.net"
 alias spacewalk1="ssh apetrocino.aa@splspace01iv.uss.net"
 alias unixsupport="ssh apetrocino.aa@slunxsuppt01v.uss.net"
+alias satellite="ssh apetrocino.aa@splrhsat01idv.uss.net"
+alias azure="ssh apetrocino.aa@cmpliatao01.uss.net"
 
 ### -----------------------------------------------------------------------------------------------------###
 
